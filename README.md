@@ -85,10 +85,10 @@ rasa shell
 ## 📸 Screenshots
 
 <img width="696" height="392" alt="image" src="https://github.com/user-attachments/assets/67004905-4262-472c-909d-94de659f2889" />
-<img width="744" height="418" alt="image" src="https://github.com/user-attachments/assets/9f0be3d2-7eda-4a2b-b637-0136af5cb3da" />
-<img width="766" height="431" alt="image" src="https://github.com/user-attachments/assets/7fb8e5b1-4a70-43c9-8051-b0f2f69841b7" />
-<img width="826" height="464" alt="image" src="https://github.com/user-attachments/assets/efc17db7-a759-493d-9c10-2d5110b85b64" />
-<img width="827" height="465" alt="image" src="https://github.com/user-attachments/assets/298ece0e-46c3-4ec3-bdde-89e38ac03b5e" />
+<img width="696" height="392" alt="image" src="https://github.com/user-attachments/assets/9f0be3d2-7eda-4a2b-b637-0136af5cb3da" />
+<img width="696" height="392" alt="image" src="https://github.com/user-attachments/assets/7fb8e5b1-4a70-43c9-8051-b0f2f69841b7" />
+<img width="696" height="392" alt="image" src="https://github.com/user-attachments/assets/efc17db7-a759-493d-9c10-2d5110b85b64" />
+<img width="696" height="392" alt="image" src="https://github.com/user-attachments/assets/298ece0e-46c3-4ec3-bdde-89e38ac03b5e" />
 
 ## 🙋‍♀️ Developed By
 
