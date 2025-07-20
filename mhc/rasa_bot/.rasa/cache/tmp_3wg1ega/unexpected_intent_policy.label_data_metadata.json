@@ -1,0 +1,369 @@
+[
+  {
+    "key": "label_intent",
+    "components": [
+      {
+        "key": "mask",
+        "number_of_dimensions": 3,
+        "features": [
+          {
+            "type": "group",
+            "subcomponents": [
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "list",
+                    "key": "component_label_intent_mask_0_0_0_list"
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "list",
+                    "key": "component_label_intent_mask_0_1_0_list"
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "list",
+                    "key": "component_label_intent_mask_0_2_0_list"
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "list",
+                    "key": "component_label_intent_mask_0_3_0_list"
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "list",
+                    "key": "component_label_intent_mask_0_4_0_list"
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "list",
+                    "key": "component_label_intent_mask_0_5_0_list"
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "list",
+                    "key": "component_label_intent_mask_0_6_0_list"
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "list",
+                    "key": "component_label_intent_mask_0_7_0_list"
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "list",
+                    "key": "component_label_intent_mask_0_8_0_list"
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "list",
+                    "key": "component_label_intent_mask_0_9_0_list"
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "list",
+                    "key": "component_label_intent_mask_0_10_0_list"
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "list",
+                    "key": "component_label_intent_mask_0_11_0_list"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sentence",
+        "number_of_dimensions": 4,
+        "features": [
+          {
+            "type": "group",
+            "subcomponents": [
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "group",
+                    "subcomponents": [
+                      {
+                        "type": "list",
+                        "key": "component_label_intent_sentence_0_0_0_0_list"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "group",
+                    "subcomponents": [
+                      {
+                        "type": "list",
+                        "key": "component_label_intent_sentence_0_1_0_0_list"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "group",
+                    "subcomponents": [
+                      {
+                        "type": "list",
+                        "key": "component_label_intent_sentence_0_2_0_0_list"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "group",
+                    "subcomponents": [
+                      {
+                        "type": "list",
+                        "key": "component_label_intent_sentence_0_3_0_0_list"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "group",
+                    "subcomponents": [
+                      {
+                        "type": "list",
+                        "key": "component_label_intent_sentence_0_4_0_0_list"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "group",
+                    "subcomponents": [
+                      {
+                        "type": "list",
+                        "key": "component_label_intent_sentence_0_5_0_0_list"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "group",
+                    "subcomponents": [
+                      {
+                        "type": "list",
+                        "key": "component_label_intent_sentence_0_6_0_0_list"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "group",
+                    "subcomponents": [
+                      {
+                        "type": "list",
+                        "key": "component_label_intent_sentence_0_7_0_0_list"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "group",
+                    "subcomponents": [
+                      {
+                        "type": "list",
+                        "key": "component_label_intent_sentence_0_8_0_0_list"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "group",
+                    "subcomponents": [
+                      {
+                        "type": "list",
+                        "key": "component_label_intent_sentence_0_9_0_0_list"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "group",
+                    "subcomponents": [
+                      {
+                        "type": "list",
+                        "key": "component_label_intent_sentence_0_10_0_0_list"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "group",
+                    "subcomponents": [
+                      {
+                        "type": "list",
+                        "key": "component_label_intent_sentence_0_11_0_0_list"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "label",
+    "components": [
+      {
+        "key": "ids",
+        "number_of_dimensions": 2,
+        "features": [
+          {
+            "type": "group",
+            "subcomponents": [
+              {
+                "type": "list",
+                "key": "component_label_ids_0_0_list"
+              },
+              {
+                "type": "list",
+                "key": "component_label_ids_0_1_list"
+              },
+              {
+                "type": "list",
+                "key": "component_label_ids_0_2_list"
+              },
+              {
+                "type": "list",
+                "key": "component_label_ids_0_3_list"
+              },
+              {
+                "type": "list",
+                "key": "component_label_ids_0_4_list"
+              },
+              {
+                "type": "list",
+                "key": "component_label_ids_0_5_list"
+              },
+              {
+                "type": "list",
+                "key": "component_label_ids_0_6_list"
+              },
+              {
+                "type": "list",
+                "key": "component_label_ids_0_7_list"
+              },
+              {
+                "type": "list",
+                "key": "component_label_ids_0_8_list"
+              },
+              {
+                "type": "list",
+                "key": "component_label_ids_0_9_list"
+              },
+              {
+                "type": "list",
+                "key": "component_label_ids_0_10_list"
+              },
+              {
+                "type": "list",
+                "key": "component_label_ids_0_11_list"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

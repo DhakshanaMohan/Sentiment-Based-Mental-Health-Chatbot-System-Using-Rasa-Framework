@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        #chat-container {
+            width: 70%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        #chat-box {
+            height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #fff;
+            text-align: left;
+        }
+        .user-message {
+            color: #4361ee;
+            font-weight: bold;
+            background-color: #f0f2fa;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px 0;
+        }
+        .bot-message {
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px 0;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            width: 80%;
+        }
+        button {
+            width: auto;
+            cursor: pointer;
+            background-color: #4361ee;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #3a56d4;
+            transform: translateY(-2px);
+        }
+        .emoji-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .emoji {
+            font-size: 35px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            border-radius: 50%;
+            padding: 5px;
+        }
+        .emoji:hover {
+            transform: scale(1.3);
+            background-color: #f0f0f0;
+        }
+        
+        /* Video Recommendation Styles */
+        .video-recommendation {
+            margin: 15px 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .video-link {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .video-card {
+            display: flex;
+            background: linear-gradient(to right, #4361ee, #7209b7);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-icon {
+            font-size: 40px;
+            margin-right: 15px;
+            color: white;
+        }
+        
+        .video-info {
+            text-align: left;
+        }
+        
+        .video-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .video-desc {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        /* Video Gallery Styles */
+        .video-gallery {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 15px;
+            margin-top: 15px;
+            justify-content: flex-start;
+            overflow-x: auto;
+            padding: 10px 0;
+            scrollbar-width: thin;
+            scrollbar-color: #4361ee #f0f0f0;
+        }
+        
+        .video-gallery::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .video-gallery::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 4px;
+        }
+        
+        .video-gallery::-webkit-scrollbar-thumb {
+            background-color: #4361ee;
+            border-radius: 4px;
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            min-width: 240px;
+            max-width: 240px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        
+        .video-thumbnail:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 135px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .video-actions {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .video-thumbnail:hover .video-actions {
+            opacity: 1;
+        }
+        
+        .video-action-btn {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 5px 10px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .video-action-btn:hover {
+            color: #4361ee;
+        }
+        
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .video-thumbnail:hover .play-icon {
+            font-size: 55px;
+            color: white;
+        }
+        
+        .thumbnail-title {
+            background: linear-gradient(to right, #4361ee, #7209b7);
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .logout-btn {
+            background-color: #e63946;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .logout-btn:hover {
+            background-color: #d62b39;
+        }
+        
+        @media (max-width: 768px) {
+            #chat-container {
+                width: 95%;
+            }
+            
+            .video-gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .video-thumbnail {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="chat-container">
+        <h2>Sentiment-Based Mental Health Companion</h2>
+
+        <h3>How are you feeling today?</h3>
+        <div class="emoji-container">
+            <span class="emoji" onclick="sendEmotion('happy')">😊</span>
+            <span class="emoji" onclick="sendEmotion('sad')">😢</span>
+            <span class="emoji" onclick="sendEmotion('angry')">😡</span>
+            <span class="emoji" onclick="sendEmotion('neutral')">😐</span>
+            <span class="emoji" onclick="sendEmotion('excited')">🤩</span>
+            <span class="emoji" onclick="sendEmotion('surprised')">😲</span>
+            <span class="emoji" onclick="sendEmotion('stressed')">😖</span>
+            <span class="emoji" onclick="sendEmotion('lonely')">🥺</span>
+            <span class="emoji" onclick="sendEmotion('fear')">😨</span>
+        </div>
+
+        <div id="chat-box"></div>
+
+        <input type="text" id="user-input" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()">Send</button>
+
+        <h3>Provide Feedback</h3>
+        <input type="text" id="feedback" placeholder="Your feedback...">
+        <button onclick="sendFeedback()">Submit</button>
+
+        <br><br>
+        <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+
+    <script>
+        function sendMessage() {
+            let userMessage = document.getElementById("user-input").value.trim();
+            if (userMessage === "") return;
+
+            let chatBox = document.getElementById("chat-box");
+            chatBox.innerHTML += `<p class="user-message">You: ${userMessage}</p>`;
+
+            fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ "message": userMessage })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.reply) {
+                    let botResponse = `<div class="bot-message">Bot: ${data.reply}`;
+                    
+                    // Add video thumbnails if provided
+                    if (data.showVideos && data.videoSuggestions && data.videoSuggestions.length > 0) {
+                        botResponse += `<div class="video-gallery">`;
+                        
+                        data.videoSuggestions.forEach(video => {
+                            botResponse += `
+                                <div class="video-thumbnail">
+                                    <img src="${video.thumbnail}" alt="${video.title}">
+                                    <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+                                    <div class="thumbnail-title">${video.title}</div>
+                                    <div class="video-actions">
+                                        <button class="video-action-btn" onclick="window.open('${video.url}', '_blank')">
+                                            <i class="fas fa-play"></i> Watch
+                                        </button>
+                                        <button class="video-action-btn" onclick="dislikeVideo()">
+                                            <i class="fas fa-thumbs-down"></i> Not interested
+                                        </button>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        
+                        botResponse += `</div>`;
+                    }
+                    
+                    botResponse += `</div>`;
+                    chatBox.innerHTML += botResponse;
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                }
+            });
+
+            document.getElementById("user-input").value = "";
+        }
+
+        function sendEmotion(emotion) {
+            let chatBox = document.getElementById("chat-box");
+            chatBox.innerHTML += `<p class="user-message">You selected: ${emotion} mood</p>`;
+
+            fetch("/emotion", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ "emotion": emotion })
+            })
+            .then(response => response.json())
+            .then(data => {
+                let botResponse = `<div class="bot-message">Bot: ${data.reply}`;
+                
+                // Add video thumbnails if provided
+                if (data.showVideos && data.videoSuggestions && data.videoSuggestions.length > 0) {
+                    botResponse += `<div class="video-gallery">`;
+                    
+                    data.videoSuggestions.forEach(video => {
+                        botResponse += `
+                            <div class="video-thumbnail">
+                                <img src="${video.thumbnail}" alt="${video.title}">
+                                <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+                                <div class="thumbnail-title">${video.title}</div>
+                                <div class="video-actions">
+                                    <button class="video-action-btn" onclick="window.open('${video.url}', '_blank')">
+                                        <i class="fas fa-play"></i> Watch
+                                    </button>
+                                    <button class="video-action-btn" onclick="dislikeVideo()">
+                                        <i class="fas fa-thumbs-down"></i> Not interested
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    
+                    botResponse += `</div>`;
+                }
+                
+                botResponse += `</div>`;
+                chatBox.innerHTML += botResponse;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            });
+        }
+
+        function sendFeedback() {
+            let feedback = document.getElementById("feedback").value.trim();
+            if (feedback === "") {
+                alert("Feedback cannot be empty!");
+                return;
+            }
+
+            fetch("/feedback", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ "message": feedback })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                document.getElementById("feedback").value = "";
+            })
+            .catch(error => console.error("Error:", error));
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        }
+        
+        // Display welcome message when the chat loads
+        window.onload = function() {
+            let chatBox = document.getElementById("chat-box");
+            chatBox.innerHTML += `<div class="bot-message">Bot: 👋 Welcome! How are you feeling today? You can click an emoji above or type your feelings.</div>`;
+        }
+
+        function dislikeVideo() {
+            let chatBox = document.getElementById("chat-box");
+            chatBox.innerHTML += `<p class="user-message">You: I don't like this video</p>`;
+            
+            fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ "message": "I don't like this video" })
+            })
+            .then(response => response.json())
+            .then(data => {
+                let botResponse = `<div class="bot-message">Bot: ${data.reply}`;
+                
+                if (data.showVideos && data.videoSuggestions && data.videoSuggestions.length > 0) {
+                    botResponse += `<div class="video-gallery">`;
+                    
+                    data.videoSuggestions.forEach(video => {
+                        botResponse += `
+                            <div class="video-thumbnail">
+                                <img src="${video.thumbnail}" alt="${video.title}">
+                                <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+                                <div class="thumbnail-title">${video.title}</div>
+                                <div class="video-actions">
+                                    <button class="video-action-btn" onclick="window.open('${video.url}', '_blank')">
+                                        <i class="fas fa-play"></i> Watch
+                                    </button>
+                                    <button class="video-action-btn" onclick="dislikeVideo()">
+                                        <i class="fas fa-thumbs-down"></i> Not interested
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    
+                    botResponse += `</div>`;
+                }
+                
+                botResponse += `</div>`;
+                chatBox.innerHTML += botResponse;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            });
+        }
+    </script>
+
+</body>
+</html>

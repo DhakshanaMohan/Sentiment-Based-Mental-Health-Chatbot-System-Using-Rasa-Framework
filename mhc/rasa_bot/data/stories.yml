@@ -1,0 +1,32 @@
+version: "3.1"
+
+stories:
+- story: happy response
+  steps:
+  - intent: express_happiness
+  - action: utter_happiness
+
+- story: sad response
+  steps:
+  - intent: express_sadness
+  - action: utter_sadness
+
+- story: angry response
+  steps:
+  - intent: express_anger
+  - action: utter_anger
+
+- story: stress response
+  steps:
+  - intent: express_stress
+  - action: utter_stress
+
+- story: surprise response
+  steps:
+  - intent: express_surprise
+  - action: utter_surprise
+
+- story: loneliness response
+  steps:
+  - intent: express_loneliness
+  - action: utter_loneliness

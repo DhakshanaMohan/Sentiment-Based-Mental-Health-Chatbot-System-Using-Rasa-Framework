@@ -1,0 +1,14 @@
+{
+  "0": "bot_challenge",
+  "1": "express_anger",
+  "2": "express_excited",
+  "3": "express_happiness",
+  "4": "express_loneliness",
+  "5": "express_neutral",
+  "6": "express_sadness",
+  "7": "express_stress",
+  "8": "express_surprise",
+  "9": "feedback",
+  "10": "goodbye",
+  "11": "greet"
+}

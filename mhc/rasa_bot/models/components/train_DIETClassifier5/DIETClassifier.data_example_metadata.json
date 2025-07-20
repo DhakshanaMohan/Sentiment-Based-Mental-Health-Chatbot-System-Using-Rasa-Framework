@@ -1,0 +1,144 @@
+[
+  {
+    "key": "label",
+    "components": [
+      {
+        "key": "ids",
+        "number_of_dimensions": 2,
+        "features": [
+          {
+            "type": "group",
+            "subcomponents": [
+              {
+                "type": "list",
+                "key": "component_label_ids_0_0_list"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "mask",
+        "number_of_dimensions": 3,
+        "features": [
+          {
+            "type": "group",
+            "subcomponents": [
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "list",
+                    "key": "component_label_mask_0_0_0_list"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sequence",
+        "number_of_dimensions": 3,
+        "features": [
+          {
+            "type": "group",
+            "subcomponents": [
+              {
+                "type": "sparse",
+                "key": "component_label_sequence_0_0",
+                "shape": [
+                  1,
+                  7
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sequence_lengths",
+        "number_of_dimensions": 1,
+        "features": [
+          {
+            "type": "list",
+            "key": "component_label_sequence_lengths_0_list"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "text",
+    "components": [
+      {
+        "key": "mask",
+        "number_of_dimensions": 3,
+        "features": [
+          {
+            "type": "group",
+            "subcomponents": [
+              {
+                "type": "group",
+                "subcomponents": [
+                  {
+                    "type": "list",
+                    "key": "component_text_mask_0_0_0_list"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sentence",
+        "number_of_dimensions": 3,
+        "features": [
+          {
+            "type": "group",
+            "subcomponents": [
+              {
+                "type": "sparse",
+                "key": "component_text_sentence_0_0",
+                "shape": [
+                  1,
+                  777
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sequence",
+        "number_of_dimensions": 3,
+        "features": [
+          {
+            "type": "group",
+            "subcomponents": [
+              {
+                "type": "sparse",
+                "key": "component_text_sequence_0_0",
+                "shape": [
+                  1,
+                  800
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sequence_lengths",
+        "number_of_dimensions": 1,
+        "features": [
+          {
+            "type": "list",
+            "key": "component_text_sequence_lengths_0_list"
+          }
+        ]
+      }
+    ]
+  }
+]

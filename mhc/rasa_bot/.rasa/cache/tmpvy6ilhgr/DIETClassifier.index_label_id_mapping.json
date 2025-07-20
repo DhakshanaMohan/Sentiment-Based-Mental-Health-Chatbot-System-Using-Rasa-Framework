@@ -1,0 +1,11 @@
+{
+  "0": "express_anger",
+  "1": "express_happiness",
+  "2": "express_loneliness",
+  "3": "express_sadness",
+  "4": "express_stress",
+  "5": "express_surprise",
+  "6": "fallback",
+  "7": "goodbye",
+  "8": "greet"
+}

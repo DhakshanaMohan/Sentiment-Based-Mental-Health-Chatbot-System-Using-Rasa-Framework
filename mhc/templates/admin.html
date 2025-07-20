@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Feedbacks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #fff;
+            width: 80%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            overflow-y: auto;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+        }
+
+        .logout-btn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .logout-btn:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Admin Panel - User Feedback</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Feedback</th>
+                    <th>Submitted On</th>
+                </tr>
+            </thead>
+            <tbody id="feedback-table">
+                <!-- Feedback data will be inserted here -->
+            </tbody>
+        </table>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        function fetchFeedback() {
+            fetch("/get-feedback")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Unauthorized access");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    let table = document.getElementById("feedback-table");
+                    table.innerHTML = "";
+                    if (data.length === 0) {
+                        table.innerHTML = "<tr><td colspan='3'>No feedback available</td></tr>";
+                    } else {
+                        data.forEach(feedback => {
+                            let row = `<tr>
+                                <td>${feedback.username}</td>
+                                <td>${feedback.message}</td>
+                                <td>${feedback.date}</td>
+                            </tr>`;
+                            table.innerHTML += row;
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error("Error fetching feedback:", error);
+                    alert("You are not authorized to view this page.");
+                    window.location.href = "/";
+                });
+        }
+
+        function logout() {
+            fetch("/logout").then(() => {
+                window.location.href = "/";
+            });
+        }
+
+        // Load feedback on page load
+        fetchFeedback();
+    </script>
+</body>
+</html>

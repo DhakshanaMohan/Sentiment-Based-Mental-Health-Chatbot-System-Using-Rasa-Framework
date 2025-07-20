@@ -1,0 +1,42 @@
+version: "3.1"
+
+rules:
+- rule: Respond to happiness
+  steps:
+  - intent: express_happiness
+  - action: utter_happiness
+
+- rule: Respond to sadness
+  steps:
+  - intent: express_sadness
+  - action: utter_sadness
+
+- rule: Respond to anger
+  steps:
+  - intent: express_anger
+  - action: utter_anger
+
+- rule: Respond to stress
+  steps:
+  - intent: express_stress
+  - action: utter_stress
+
+- rule: Respond to surprise
+  steps:
+  - intent: express_surprise
+  - action: utter_surprise
+
+- rule: Respond to loneliness
+  steps:
+  - intent: express_loneliness
+  - action: utter_loneliness
+  
+- rule: Say goodbye when the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Respond to unrecognized input
+  steps:
+  - intent: fallback
+  - action: utter_fallback

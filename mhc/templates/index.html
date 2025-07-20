@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Companion | Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --primary-dark: #3a56d4;
+            --secondary-color: #7209b7;
+            --text-color: #333;
+            --light-gray: #f5f7fa;
+            --border-color: #e1e4e8;
+            --error-color: #e63946;
+            --success-color: #2a9d8f;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            display: flex;
+            min-height: 480px;
+            width: 900px;
+            margin: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .left-panel {
+            flex: 1;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 40px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .left-panel h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .left-panel p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .shape-1 {
+            width: 200px;
+            height: 200px;
+            bottom: -50px;
+            left: -50px;
+        }
+        
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            top: 30px;
+            right: -30px;
+        }
+        
+        .form-container {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+        
+        .form-section {
+            opacity: 0;
+            display: none;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .form-section.active {
+            opacity: 1;
+            display: block;
+            transform: translateY(0);
+        }
+        
+        .tab-navigation {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .tab-btn {
+            padding: 12px 20px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            color: var(--text-color);
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .tab-btn.active:after {
+            width: 100%;
+        }
+        
+        h2 {
+            color: var(--text-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            padding-left: 40px;
+        }
+        
+        .input-group input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+        }
+        
+        .input-group .icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+        }
+        
+        .password-toggle {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .password-toggle:hover {
+            color: var(--primary-color);
+        }
+        
+        .error-input {
+            border-color: var(--error-color) !important;
+        }
+        
+        .error-message, .success-message {
+            font-size: 14px;
+            margin-top: 6px;
+            display: block;
+        }
+        
+        .error-message {
+            color: var(--error-color);
+        }
+        
+        .success-message {
+            color: var(--success-color);
+        }
+        
+        button.btn-submit {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        button.btn-submit:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.2);
+        }
+        
+        .divider {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .divider span {
+            padding: 0 10px;
+            color: #777;
+            font-size: 14px;
+        }
+        
+        .form-footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+        
+        .form-footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                width: 100%;
+                max-width: 500px;
+            }
+            
+            .left-panel {
+                padding: 30px;
+                min-height: 200px;
+            }
+            
+            .left-panel h1 {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+            
+            .left-panel p {
+                font-size: 1rem;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <h1>Mental Health Companion</h1>
+            <p>Your personal wellness assistant for managing stress, anxiety, and improving your mental health.</p>
+        </div>
+        
+        <div class="form-container">
+            <div class="tab-navigation">
+                <button class="tab-btn active" data-target="login-form">Login</button>
+                <button class="tab-btn" data-target="register-form">Register</button>
+                <button class="tab-btn" data-target="admin-form">Admin</button>
+            </div>
+            
+            <!-- Login Form -->
+            <div id="login-form" class="form-section active">
+                <h2>Welcome Back!</h2>
+                
+                <div class="input-group">
+                    <i class="icon fas fa-user"></i>
+                    <input type="text" id="username" placeholder="Username">
+                </div>
+                
+                <div class="input-group">
+                    <i class="icon fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password">
+                    <i class="password-toggle fas fa-eye" onclick="togglePassword('password')"></i>
+                </div>
+                
+                <p id="login-error" class="error-message"></p>
+                
+                <button class="btn-submit" onclick="login()">Sign In</button>
+                
+                <div class="form-footer">
+                    Don't have an account? <a onclick="switchTab('register-form')">Create one</a>
+                </div>
+            </div>
+            
+            <!-- Register Form -->
+            <div id="register-form" class="form-section">
+                <h2>Create Account</h2>
+                
+                <div class="input-group">
+                    <i class="icon fas fa-user"></i>
+                    <input type="text" id="new-username" placeholder="Choose Username">
+                </div>
+                
+                <div class="input-group">
+                    <i class="icon fas fa-lock"></i>
+                    <input type="password" id="new-password" placeholder="Create Password">
+                    <i class="password-toggle fas fa-eye" onclick="togglePassword('new-password')"></i>
+                </div>
+                
+                <p id="register-message" class="success-message"></p>
+                
+                <button class="btn-submit" onclick="register()">Sign Up</button>
+                
+                <div class="form-footer">
+                    Already have an account? <a onclick="switchTab('login-form')">Sign in</a>
+                </div>
+            </div>
+            
+            <!-- Admin Form -->
+            <div id="admin-form" class="form-section">
+                <h2>Admin Access</h2>
+                
+                <div class="input-group">
+                    <i class="icon fas fa-user-shield"></i>
+                    <input type="text" id="admin-username" placeholder="Admin Username">
+                </div>
+                
+                <div class="input-group">
+                    <i class="icon fas fa-lock"></i>
+                    <input type="password" id="admin-password" placeholder="Admin Password">
+                    <i class="password-toggle fas fa-eye" onclick="togglePassword('admin-password')"></i>
+                </div>
+                
+                <p id="admin-error" class="error-message"></p>
+                
+                <button class="btn-submit" onclick="adminLogin()">Admin Login</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Switch between tabs
+        function switchTab(targetId) {
+            // Remove active class from all tabs and sections
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelectorAll('.form-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Add active class to clicked tab and corresponding section
+            document.querySelector(`.tab-btn[data-target="${targetId}"]`).classList.add('active');
+            document.getElementById(targetId).classList.add('active');
+        }
+        
+        // Set up tab navigation
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                switchTab(btn.dataset.target);
+            });
+        });
+        
+        // Toggle password visibility
+        function togglePassword(fieldId) {
+            let passwordField = document.getElementById(fieldId);
+            let icon = passwordField.nextElementSibling;
+            
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
+                setTimeout(() => { 
+                    passwordField.type = "password"; 
+                    icon.classList.replace('fa-eye-slash', 'fa-eye');
+                }, 1000);
+            }
+        }
+
+        // Validate password strength
+        function validatePassword(password) {
+            if (password.length < 8) return "Password must be at least 8 characters.";
+            if (!/[A-Z]/.test(password)) return "Include at least one uppercase letter.";
+            if (!/[0-9]/.test(password)) return "Include at least one number.";
+            return "";
+        }
+
+        // User login function
+        function login() {
+            let username = document.getElementById("username").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let errorMessage = document.getElementById("login-error");
+
+            errorMessage.innerText = "";
+            if (username === "" || password === "") {
+                errorMessage.innerText = "Username and Password cannot be empty!";
+                return;
+            }
+
+            fetch("/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ "username": username, "password": password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.redirect) {
+                    window.location.href = data.redirect;
+                } else {
+                    errorMessage.innerText = data.message;
+                }
+            })
+            .catch(() => {
+                errorMessage.innerText = "Server error! Please try again.";
+            });
+        }
+
+        // User registration function
+        function register() {
+            let username = document.getElementById("new-username").value.trim();
+            let password = document.getElementById("new-password").value.trim();
+            let message = document.getElementById("register-message");
+
+            message.innerText = "";
+            message.className = "error-message";
+            
+            if (username === "" || password === "") {
+                message.innerText = "Username and Password cannot be empty!";
+                return;
+            }
+
+            let passwordError = validatePassword(password);
+            if (passwordError) {
+                message.innerText = passwordError;
+                return;
+            }
+
+            fetch("/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ "username": username, "password": password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                message.innerText = data.message;
+                message.className = data.message.includes("successful") ? "success-message" : "error-message";
+
+                if (data.redirect) {
+                    window.location.href = data.redirect;
+                }
+            })
+            .catch(() => {
+                message.innerText = "Server error! Please try again.";
+            });
+        }
+
+        // Admin login function
+        function adminLogin() {
+            let username = document.getElementById("admin-username").value.trim();
+            let password = document.getElementById("admin-password").value.trim();
+            let errorMessage = document.getElementById("admin-error");
+
+            errorMessage.innerText = "";
+            if (username === "" || password === "") {
+                errorMessage.innerText = "Admin Username and Password cannot be empty!";
+                return;
+            }
+
+            fetch("/admin", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ "username": username, "password": password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.redirect) {
+                    window.location.href = data.redirect;
+                } else {
+                    errorMessage.innerText = data.message;
+                }
+            })
+            .catch(() => {
+                errorMessage.innerText = "Server error! Please try again.";
+            });
+        }
+    </script>
+</body>
+</html>

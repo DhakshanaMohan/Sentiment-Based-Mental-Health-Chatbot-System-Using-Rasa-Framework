@@ -1,0 +1,28 @@
+{
+  "action_name": [
+    {
+      "data_type": "sentence",
+      "attribute": "action_name",
+      "origin": "IntentTokenizerSingleStateFeaturizer",
+      "is_sparse": true,
+      "shape": [
+        0,
+        19
+      ],
+      "safetensors_key": "action_name_0"
+    }
+  ],
+  "intent": [
+    {
+      "data_type": "sentence",
+      "attribute": "intent",
+      "origin": "IntentTokenizerSingleStateFeaturizer",
+      "is_sparse": true,
+      "shape": [
+        0,
+        12
+      ],
+      "safetensors_key": "intent_0"
+    }
+  ]
+}

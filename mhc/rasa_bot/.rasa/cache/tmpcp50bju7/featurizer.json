@@ -1,0 +1,54 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "back": 0,
+        "express_anger": 1,
+        "express_happiness": 2,
+        "express_loneliness": 3,
+        "express_sadness": 4,
+        "express_stress": 5,
+        "express_surprise": 6,
+        "fallback": 7,
+        "goodbye": 8,
+        "greet": 9,
+        "nlu_fallback": 10,
+        "out_of_scope": 11,
+        "restart": 12,
+        "session_start": 13
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "utter_greet": 13,
+        "utter_goodbye": 14,
+        "utter_happiness": 15,
+        "utter_sadness": 16,
+        "utter_anger": 17,
+        "utter_stress": 18,
+        "utter_surprise": 19,
+        "utter_loneliness": 20,
+        "utter_fallback": 21
+      },
+      "entities": {},
+      "slots": {},
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

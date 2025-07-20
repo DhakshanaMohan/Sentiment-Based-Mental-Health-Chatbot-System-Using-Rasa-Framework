@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: fbmessenger
+Version: 6.0.0
+Summary: A python library to communicate with the Facebook Messenger API's
+Home-page: https://github.com/rehabstudio/fbmessenger
+Author: Ricky Dunlop
+Author-email: hello@rickydunlop.co.uk
+License: Apache
+Keywords: Facebook Messenger Bot Chatbot
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: requests (>=2.0)
+
+UNKNOWN
+
+

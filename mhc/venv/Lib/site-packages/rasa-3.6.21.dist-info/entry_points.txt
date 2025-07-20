@@ -1,0 +1,3 @@
+[console_scripts]
+rasa=rasa.__main__:main
+

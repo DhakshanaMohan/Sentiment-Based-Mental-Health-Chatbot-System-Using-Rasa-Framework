@@ -1,0 +1,470 @@
+Metadata-Version: 2.1
+Name: confluent-kafka
+Version: 2.8.2
+Summary: Confluent's Python client for Apache Kafka
+Author-email: "Confluent Inc." <support@confluent.io>
+Project-URL: Homepage, https://github.com/confluentinc/confluent-kafka-python
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: all
+Requires-Dist: psutil; extra == "all"
+Requires-Dist: opentelemetry-distro; extra == "all"
+Requires-Dist: opentelemetry-exporter-otlp; extra == "all"
+Requires-Dist: sphinx; extra == "all"
+Requires-Dist: sphinx-rtd-theme; extra == "all"
+Requires-Dist: confluent-kafka; extra == "all"
+Requires-Dist: fastapi; extra == "all"
+Requires-Dist: pydantic; extra == "all"
+Requires-Dist: uvicorn; extra == "all"
+Requires-Dist: six; extra == "all"
+Requires-Dist: attrs; extra == "all"
+Requires-Dist: cachetools; extra == "all"
+Requires-Dist: httpx; extra == "all"
+Requires-Dist: requests; extra == "all"
+Requires-Dist: avro<2,>=1.11.1; extra == "all"
+Requires-Dist: pyrsistent; extra == "all"
+Requires-Dist: jsonschema; extra == "all"
+Requires-Dist: googleapis-common-protos; extra == "all"
+Requires-Dist: protobuf; extra == "all"
+Requires-Dist: azure-identity; extra == "all"
+Requires-Dist: azure-keyvault-keys; extra == "all"
+Requires-Dist: boto3; extra == "all"
+Requires-Dist: cel-python>=0.1.5; extra == "all"
+Requires-Dist: google-auth; extra == "all"
+Requires-Dist: google-api-core; extra == "all"
+Requires-Dist: google-cloud-kms; extra == "all"
+Requires-Dist: hkdf==0.0.3; extra == "all"
+Requires-Dist: hvac; extra == "all"
+Requires-Dist: jsonata-python; extra == "all"
+Requires-Dist: pyyaml>=6.0.0; extra == "all"
+Requires-Dist: tink; extra == "all"
+Requires-Dist: flake8; extra == "all"
+Requires-Dist: orjson; extra == "all"
+Requires-Dist: pytest; extra == "all"
+Requires-Dist: pytest-timeout; extra == "all"
+Requires-Dist: requests-mock; extra == "all"
+Requires-Dist: respx; extra == "all"
+Requires-Dist: pytest-cov; extra == "all"
+Requires-Dist: httpx>=0.26; extra == "all"
+Requires-Dist: authlib; extra == "all"
+Requires-Dist: boto3>=1.35; extra == "all"
+Requires-Dist: urllib3<2; python_version <= "3.7" and extra == "all"
+Requires-Dist: fastavro<1.8.0; python_version == "3.7" and extra == "all"
+Requires-Dist: fastavro<2; python_version > "3.7" and extra == "all"
+Requires-Dist: urllib3<3; python_version > "3.7" and extra == "all"
+Provides-Extra: avro
+Requires-Dist: requests; extra == "avro"
+Requires-Dist: avro<2,>=1.11.1; extra == "avro"
+Requires-Dist: attrs; extra == "avro"
+Requires-Dist: cachetools; extra == "avro"
+Requires-Dist: httpx>=0.26; extra == "avro"
+Requires-Dist: authlib; extra == "avro"
+Requires-Dist: fastavro<1.8.0; python_version == "3.7" and extra == "avro"
+Requires-Dist: fastavro<2; python_version > "3.7" and extra == "avro"
+Provides-Extra: dev
+Requires-Dist: sphinx; extra == "dev"
+Requires-Dist: sphinx-rtd-theme; extra == "dev"
+Requires-Dist: confluent-kafka; extra == "dev"
+Requires-Dist: fastapi; extra == "dev"
+Requires-Dist: pydantic; extra == "dev"
+Requires-Dist: uvicorn; extra == "dev"
+Requires-Dist: six; extra == "dev"
+Requires-Dist: attrs; extra == "dev"
+Requires-Dist: cachetools; extra == "dev"
+Requires-Dist: httpx; extra == "dev"
+Requires-Dist: requests; extra == "dev"
+Requires-Dist: avro<2,>=1.11.1; extra == "dev"
+Requires-Dist: pyrsistent; extra == "dev"
+Requires-Dist: jsonschema; extra == "dev"
+Requires-Dist: googleapis-common-protos; extra == "dev"
+Requires-Dist: protobuf; extra == "dev"
+Requires-Dist: azure-identity; extra == "dev"
+Requires-Dist: azure-keyvault-keys; extra == "dev"
+Requires-Dist: boto3; extra == "dev"
+Requires-Dist: cel-python>=0.1.5; extra == "dev"
+Requires-Dist: google-auth; extra == "dev"
+Requires-Dist: google-api-core; extra == "dev"
+Requires-Dist: google-cloud-kms; extra == "dev"
+Requires-Dist: hkdf==0.0.3; extra == "dev"
+Requires-Dist: hvac; extra == "dev"
+Requires-Dist: jsonata-python; extra == "dev"
+Requires-Dist: pyyaml>=6.0.0; extra == "dev"
+Requires-Dist: tink; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+Requires-Dist: orjson; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-timeout; extra == "dev"
+Requires-Dist: requests-mock; extra == "dev"
+Requires-Dist: respx; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: httpx>=0.26; extra == "dev"
+Requires-Dist: authlib; extra == "dev"
+Requires-Dist: boto3>=1.35; extra == "dev"
+Requires-Dist: urllib3<2; python_version <= "3.7" and extra == "dev"
+Requires-Dist: fastavro<1.8.0; python_version == "3.7" and extra == "dev"
+Requires-Dist: fastavro<2; python_version > "3.7" and extra == "dev"
+Requires-Dist: urllib3<3; python_version > "3.7" and extra == "dev"
+Provides-Extra: docs
+Requires-Dist: sphinx; extra == "docs"
+Requires-Dist: sphinx-rtd-theme; extra == "docs"
+Requires-Dist: attrs; extra == "docs"
+Requires-Dist: cachetools; extra == "docs"
+Requires-Dist: httpx>=0.26; extra == "docs"
+Requires-Dist: authlib; extra == "docs"
+Requires-Dist: azure-identity; extra == "docs"
+Requires-Dist: azure-keyvault-keys; extra == "docs"
+Requires-Dist: boto3>=1.35; extra == "docs"
+Requires-Dist: cel-python>=0.1.5; extra == "docs"
+Requires-Dist: google-auth; extra == "docs"
+Requires-Dist: google-api-core; extra == "docs"
+Requires-Dist: google-cloud-kms; extra == "docs"
+Requires-Dist: hkdf==0.0.3; extra == "docs"
+Requires-Dist: hvac; extra == "docs"
+Requires-Dist: jsonata-python; extra == "docs"
+Requires-Dist: pyyaml>=6.0.0; extra == "docs"
+Requires-Dist: tink; extra == "docs"
+Requires-Dist: requests; extra == "docs"
+Requires-Dist: avro<2,>=1.11.1; extra == "docs"
+Requires-Dist: pyrsistent; extra == "docs"
+Requires-Dist: jsonschema; extra == "docs"
+Requires-Dist: googleapis-common-protos; extra == "docs"
+Requires-Dist: protobuf; extra == "docs"
+Requires-Dist: fastavro<1.8.0; python_version == "3.7" and extra == "docs"
+Requires-Dist: fastavro<2; python_version > "3.7" and extra == "docs"
+Provides-Extra: examples
+Requires-Dist: confluent-kafka; extra == "examples"
+Requires-Dist: fastapi; extra == "examples"
+Requires-Dist: pydantic; extra == "examples"
+Requires-Dist: uvicorn; extra == "examples"
+Requires-Dist: six; extra == "examples"
+Requires-Dist: attrs; extra == "examples"
+Requires-Dist: cachetools; extra == "examples"
+Requires-Dist: httpx; extra == "examples"
+Requires-Dist: requests; extra == "examples"
+Requires-Dist: avro<2,>=1.11.1; extra == "examples"
+Requires-Dist: pyrsistent; extra == "examples"
+Requires-Dist: jsonschema; extra == "examples"
+Requires-Dist: googleapis-common-protos; extra == "examples"
+Requires-Dist: protobuf; extra == "examples"
+Requires-Dist: azure-identity; extra == "examples"
+Requires-Dist: azure-keyvault-keys; extra == "examples"
+Requires-Dist: boto3; extra == "examples"
+Requires-Dist: cel-python>=0.1.5; extra == "examples"
+Requires-Dist: google-auth; extra == "examples"
+Requires-Dist: google-api-core; extra == "examples"
+Requires-Dist: google-cloud-kms; extra == "examples"
+Requires-Dist: hkdf==0.0.3; extra == "examples"
+Requires-Dist: hvac; extra == "examples"
+Requires-Dist: jsonata-python; extra == "examples"
+Requires-Dist: pyyaml>=6.0.0; extra == "examples"
+Requires-Dist: tink; extra == "examples"
+Requires-Dist: fastavro<1.8.0; python_version == "3.7" and extra == "examples"
+Requires-Dist: fastavro<2; python_version > "3.7" and extra == "examples"
+Provides-Extra: json
+Requires-Dist: pyrsistent; extra == "json"
+Requires-Dist: jsonschema; extra == "json"
+Requires-Dist: attrs; extra == "json"
+Requires-Dist: cachetools; extra == "json"
+Requires-Dist: httpx>=0.26; extra == "json"
+Requires-Dist: authlib; extra == "json"
+Provides-Extra: protobuf
+Requires-Dist: googleapis-common-protos; extra == "protobuf"
+Requires-Dist: protobuf; extra == "protobuf"
+Requires-Dist: attrs; extra == "protobuf"
+Requires-Dist: cachetools; extra == "protobuf"
+Requires-Dist: httpx>=0.26; extra == "protobuf"
+Requires-Dist: authlib; extra == "protobuf"
+Provides-Extra: rules
+Requires-Dist: azure-identity; extra == "rules"
+Requires-Dist: azure-keyvault-keys; extra == "rules"
+Requires-Dist: boto3>=1.35; extra == "rules"
+Requires-Dist: cel-python>=0.1.5; extra == "rules"
+Requires-Dist: google-auth; extra == "rules"
+Requires-Dist: google-api-core; extra == "rules"
+Requires-Dist: google-cloud-kms; extra == "rules"
+Requires-Dist: hkdf==0.0.3; extra == "rules"
+Requires-Dist: hvac; extra == "rules"
+Requires-Dist: jsonata-python; extra == "rules"
+Requires-Dist: pyyaml>=6.0.0; extra == "rules"
+Requires-Dist: tink; extra == "rules"
+Requires-Dist: attrs; extra == "rules"
+Requires-Dist: cachetools; extra == "rules"
+Requires-Dist: httpx>=0.26; extra == "rules"
+Requires-Dist: authlib; extra == "rules"
+Provides-Extra: schema_registry
+Requires-Dist: attrs; extra == "schema-registry"
+Requires-Dist: cachetools; extra == "schema-registry"
+Requires-Dist: httpx>=0.26; extra == "schema-registry"
+Requires-Dist: authlib; extra == "schema-registry"
+Provides-Extra: schemaregistry
+Requires-Dist: attrs; extra == "schemaregistry"
+Requires-Dist: cachetools; extra == "schemaregistry"
+Requires-Dist: httpx>=0.26; extra == "schemaregistry"
+Requires-Dist: authlib; extra == "schemaregistry"
+Provides-Extra: soaktest
+Requires-Dist: psutil; extra == "soaktest"
+Requires-Dist: opentelemetry-distro; extra == "soaktest"
+Requires-Dist: opentelemetry-exporter-otlp; extra == "soaktest"
+Provides-Extra: tests
+Requires-Dist: flake8; extra == "tests"
+Requires-Dist: orjson; extra == "tests"
+Requires-Dist: pytest; extra == "tests"
+Requires-Dist: pytest-timeout; extra == "tests"
+Requires-Dist: requests-mock; extra == "tests"
+Requires-Dist: respx; extra == "tests"
+Requires-Dist: pytest-cov; extra == "tests"
+Requires-Dist: attrs; extra == "tests"
+Requires-Dist: cachetools; extra == "tests"
+Requires-Dist: httpx>=0.26; extra == "tests"
+Requires-Dist: authlib; extra == "tests"
+Requires-Dist: azure-identity; extra == "tests"
+Requires-Dist: azure-keyvault-keys; extra == "tests"
+Requires-Dist: boto3>=1.35; extra == "tests"
+Requires-Dist: cel-python>=0.1.5; extra == "tests"
+Requires-Dist: google-auth; extra == "tests"
+Requires-Dist: google-api-core; extra == "tests"
+Requires-Dist: google-cloud-kms; extra == "tests"
+Requires-Dist: hkdf==0.0.3; extra == "tests"
+Requires-Dist: hvac; extra == "tests"
+Requires-Dist: jsonata-python; extra == "tests"
+Requires-Dist: pyyaml>=6.0.0; extra == "tests"
+Requires-Dist: tink; extra == "tests"
+Requires-Dist: requests; extra == "tests"
+Requires-Dist: avro<2,>=1.11.1; extra == "tests"
+Requires-Dist: pyrsistent; extra == "tests"
+Requires-Dist: jsonschema; extra == "tests"
+Requires-Dist: googleapis-common-protos; extra == "tests"
+Requires-Dist: protobuf; extra == "tests"
+Requires-Dist: urllib3<2; python_version <= "3.7" and extra == "tests"
+Requires-Dist: fastavro<1.8.0; python_version == "3.7" and extra == "tests"
+Requires-Dist: urllib3<3; python_version > "3.7" and extra == "tests"
+Requires-Dist: fastavro<2; python_version > "3.7" and extra == "tests"
+
+> [!WARNING]
+> Due to an error in which we included dependency changes to a recent patch release, Confluent recommends users to **refrain from upgrading to 2.6.2** of Confluent Kafka. Confluent will release a new minor version, 2.7.0, where the dependency changes will be appropriately included. Users who have already upgraded to 2.6.2 and made the required dependency changes are free to remain on that version and are recommended to upgrade to 2.7.0 when that version is available. Upon the release of 2.7.0, the 2.6.2 version will be marked deprecated.
+We apologize for the inconvenience and appreciate the feedback that we have gotten from the community.
+
+Confluent's Python Client for Apache Kafka<sup>TM</sup>
+=======================================================
+
+**confluent-kafka-python** provides a high-level Producer, Consumer and AdminClient compatible with all
+[Apache Kafka<sup>TM<sup>](http://kafka.apache.org/) brokers >= v0.8, [Confluent Cloud](https://www.confluent.io/confluent-cloud/)
+and [Confluent Platform](https://www.confluent.io/product/compare/). The client is:
+
+- **Reliable** - It's a wrapper around [librdkafka](https://github.com/edenhill/librdkafka) (provided automatically via binary wheels) which is widely deployed in a diverse set of production scenarios. It's tested using [the same set of system tests](https://github.com/confluentinc/confluent-kafka-python/tree/master/src/confluent_kafka/kafkatest) as the Java client [and more](https://github.com/confluentinc/confluent-kafka-python/tree/master/tests). It's supported by [Confluent](https://confluent.io).
+
+- **Performant** - Performance is a key design consideration. Maximum throughput is on par with the Java client for larger message sizes (where the overhead of the Python interpreter has less impact). Latency is on par with the Java client.
+
+- **Future proof** - Confluent, founded by the
+creators of Kafka, is building a [streaming platform](https://www.confluent.io/product/compare/)
+with Apache Kafka at its core. It's high priority for us that client features keep
+pace with core Apache Kafka and components of the [Confluent Platform](https://www.confluent.io/product/compare/).
+
+
+## Usage
+
+For a step-by-step guide on using the client see [Getting Started with Apache Kafka and Python](https://developer.confluent.io/get-started/python/).
+
+Aditional examples can be found in the [examples](examples) directory or the [confluentinc/examples](https://github.com/confluentinc/examples/tree/master/clients/cloud/python) github repo, which include demonstration of:
+- Exactly once data processing using the transactional API.
+- Integration with asyncio.
+- (De)serializing Protobuf, JSON, and Avro data with Confluent Schema Registry integration.
+- [Confluent Cloud](https://www.confluent.io/confluent-cloud/) configuration.
+
+Also refer to the [API documentation](http://docs.confluent.io/current/clients/confluent-kafka-python/index.html).
+
+Finally, the [tests](tests) are useful as a reference for example usage.
+
+### Basic Producer Example
+
+```python
+from confluent_kafka import Producer
+
+p = Producer({'bootstrap.servers': 'mybroker1,mybroker2'})
+
+def delivery_report(err, msg):
+    """ Called once for each message produced to indicate delivery result.
+        Triggered by poll() or flush(). """
+    if err is not None:
+        print('Message delivery failed: {}'.format(err))
+    else:
+        print('Message delivered to {} [{}]'.format(msg.topic(), msg.partition()))
+
+for data in some_data_source:
+    # Trigger any available delivery report callbacks from previous produce() calls
+    p.poll(0)
+
+    # Asynchronously produce a message. The delivery report callback will
+    # be triggered from the call to poll() above, or flush() below, when the
+    # message has been successfully delivered or failed permanently.
+    p.produce('mytopic', data.encode('utf-8'), callback=delivery_report)
+
+# Wait for any outstanding messages to be delivered and delivery report
+# callbacks to be triggered.
+p.flush()
+```
+
+For a discussion on the poll based producer API, refer to the
+[Integrating Apache Kafka With Python Asyncio Web Applications](https://www.confluent.io/blog/kafka-python-asyncio-integration/)
+blog post.
+
+
+### Basic Consumer Example
+
+```python
+from confluent_kafka import Consumer
+
+c = Consumer({
+    'bootstrap.servers': 'mybroker',
+    'group.id': 'mygroup',
+    'auto.offset.reset': 'earliest'
+})
+
+c.subscribe(['mytopic'])
+
+while True:
+    msg = c.poll(1.0)
+
+    if msg is None:
+        continue
+    if msg.error():
+        print("Consumer error: {}".format(msg.error()))
+        continue
+
+    print('Received message: {}'.format(msg.value().decode('utf-8')))
+
+c.close()
+```
+
+
+### Basic AdminClient Example
+
+Create topics:
+
+```python
+from confluent_kafka.admin import AdminClient, NewTopic
+
+a = AdminClient({'bootstrap.servers': 'mybroker'})
+
+new_topics = [NewTopic(topic, num_partitions=3, replication_factor=1) for topic in ["topic1", "topic2"]]
+# Note: In a multi-cluster production scenario, it is more typical to use a replication_factor of 3 for durability.
+
+# Call create_topics to asynchronously create topics. A dict
+# of <topic,future> is returned.
+fs = a.create_topics(new_topics)
+
+# Wait for each operation to finish.
+for topic, f in fs.items():
+    try:
+        f.result()  # The result itself is None
+        print("Topic {} created".format(topic))
+    except Exception as e:
+        print("Failed to create topic {}: {}".format(topic, e))
+```
+
+
+## Thread Safety
+
+The `Producer`, `Consumer` and `AdminClient` are all thread safe.
+
+
+## Install
+
+**Install self-contained binary wheels**
+
+    $ pip install confluent-kafka
+
+**NOTE:** The pre-built Linux wheels do NOT contain SASL Kerberos/GSSAPI support.
+          If you need SASL Kerberos/GSSAPI support you must install librdkafka and
+          its dependencies using the repositories below and then build
+          confluent-kafka using the instructions in the
+          "Install from source" section below.
+
+To use Schema Registry with the Avro serializer/deserializer:
+
+    $ pip install confluent-kafka[avro,schemaregistry]
+
+To use Schema Registry with the JSON serializer/deserializer:
+
+    $ pip install confluent-kafka[json,schemaregistry]
+
+To use Schema Registry with the Protobuf serializer/deserializer:
+
+    $ pip install confluent-kafka[protobuf,schemaregistry]
+
+When using Data Contract rules (including CSFLE) add the `rules`extra, e.g.:
+
+    $ pip install confluent-kafka[avro,schemaregistry,rules]
+
+**Install from source**
+
+For source install, see the *Install from source* section in [INSTALL.md](INSTALL.md).
+
+
+## Broker Compatibility
+
+The Python client (as well as the underlying C library librdkafka) supports
+all broker versions &gt;= 0.8.
+But due to the nature of the Kafka protocol in broker versions 0.8 and 0.9 it
+is not safe for a client to assume what protocol version is actually supported
+by the broker, thus you will need to hint the Python client what protocol
+version it may use. This is done through two configuration settings:
+
+ * `broker.version.fallback=YOUR_BROKER_VERSION` (default 0.9.0.1)
+ * `api.version.request=true|false` (default true)
+
+When using a Kafka 0.10 broker or later you don't need to do anything
+(`api.version.request=true` is the default).
+If you use Kafka broker 0.9 or 0.8 you must set
+`api.version.request=false` and set
+`broker.version.fallback` to your broker version,
+e.g `broker.version.fallback=0.9.0.1`.
+
+More info here:
+https://github.com/edenhill/librdkafka/wiki/Broker-version-compatibility
+
+
+## SSL certificates
+
+If you're connecting to a Kafka cluster through SSL you will need to configure
+the client with `'security.protocol': 'SSL'` (or `'SASL_SSL'` if SASL
+authentication is used).
+
+The client will use CA certificates to verify the broker's certificate.
+The embedded OpenSSL library will look for CA certificates in `/usr/lib/ssl/certs/`
+or `/usr/lib/ssl/cacert.pem`. CA certificates are typically provided by the
+Linux distribution's `ca-certificates` package which needs to be installed
+through `apt`, `yum`, et.al.
+
+If your system stores CA certificates in another location you will need to
+configure the client with `'ssl.ca.location': '/path/to/cacert.pem'`.
+
+Alternatively, the CA certificates can be provided by the [certifi](https://pypi.org/project/certifi/)
+Python package. To use certifi, add an `import certifi` line and configure the
+client's CA location with `'ssl.ca.location': certifi.where()`.
+
+
+## License
+
+[Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+KAFKA is a registered trademark of The Apache Software Foundation and has been licensed for use
+by confluent-kafka-python. confluent-kafka-python has no affiliation with and is not endorsed by
+The Apache Software Foundation.
+
+
+## Developer Notes
+
+Instructions on building and testing confluent-kafka-python can be found [here](DEVELOPER.md).
+
+
+## Confluent Cloud
+
+For a step-by-step guide on using the Python client with Confluent Cloud see [Getting Started with Apache Kafka and Python](https://developer.confluent.io/get-started/python/) on [Confluent Developer](https://developer.confluent.io/). 

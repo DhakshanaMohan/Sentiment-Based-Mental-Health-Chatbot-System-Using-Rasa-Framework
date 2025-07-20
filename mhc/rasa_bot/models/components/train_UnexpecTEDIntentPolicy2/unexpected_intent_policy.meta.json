@@ -1,0 +1,68 @@
+{
+  "hidden_layers_sizes": {
+    "text": []
+  },
+  "dense_dimension": {
+    "text": 128,
+    "intent": 20,
+    "action_name": 20,
+    "entities": 20,
+    "slots": 20,
+    "active_loop": 20,
+    "label_intent": 20
+  },
+  "concat_dimension": {
+    "text": 128
+  },
+  "encoding_dimension": 50,
+  "transformer_size": {
+    "text": 128,
+    "dialogue": 128
+  },
+  "number_of_transformer_layers": {
+    "text": 1,
+    "dialogue": 1
+  },
+  "number_of_attention_heads": 4,
+  "use_key_relative_attention": false,
+  "use_value_relative_attention": false,
+  "max_relative_position": 5,
+  "unidirectional_encoder": false,
+  "batch_size": [
+    64,
+    256
+  ],
+  "batch_strategy": "balanced",
+  "epochs": 100,
+  "random_seed": null,
+  "learning_rate": 0.001,
+  "embedding_dimension": 20,
+  "number_of_negative_examples": 20,
+  "ranking_length": 10,
+  "scale_loss": true,
+  "regularization_constant": 0.001,
+  "drop_rate_dialogue": 0.1,
+  "drop_rate": 0.0,
+  "drop_rate_label": 0.0,
+  "drop_rate_attention": 0.0,
+  "connection_density": 0.2,
+  "use_sparse_input_dropout": true,
+  "use_dense_input_dropout": true,
+  "use_masked_language_model": false,
+  "evaluate_every_number_of_epochs": 20,
+  "evaluate_on_number_of_examples": 0,
+  "tensorboard_log_directory": null,
+  "tensorboard_log_level": "epoch",
+  "checkpoint_model": false,
+  "featurizers": [],
+  "ignore_intents_list": [],
+  "tolerance": 0.0,
+  "split_entities_by_comma": true,
+  "similarity_type": "inner",
+  "entity_recognition": false,
+  "BILOU_flag": false,
+  "loss_type": "cross_entropy",
+  "priority": 2,
+  "use_gpu": true,
+  "max_history": 5
+}

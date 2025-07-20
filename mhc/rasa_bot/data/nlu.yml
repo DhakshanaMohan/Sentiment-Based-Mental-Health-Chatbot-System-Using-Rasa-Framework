@@ -1,0 +1,80 @@
+version: "3.1"
+
+nlu:
+- intent: express_happiness
+  examples: |
+    - I'm so happy today!
+    - This is the best day ever!
+    - Feeling awesome and joyful 😊
+    - I'm really enjoying this moment
+    - I feel fantastic
+
+- intent: express_sadness
+  examples: |
+    - I'm feeling really down
+    - Today has been a terrible day 😞
+    - I feel so alone
+    - Nothing is going right
+    - I'm crying
+
+- intent: express_anger
+  examples: |
+    - I'm really mad right now 😡
+    - I can't stand this situation
+    - So frustrated and angry
+    - Everything is making me angry
+    - I'm furious
+
+- intent: express_stress
+  examples: |
+    - I'm feeling very stressed 😩
+    - Too much pressure on me
+    - I feel anxious and worried
+    - I'm overloaded with work
+    - I just need to relax
+
+- intent: express_surprise
+  examples: |
+    - Wow! I didn't expect that 😲
+    - This is unbelievable!
+    - I'm really shocked
+    - That was a huge surprise
+    - Never thought this would happen!
+
+- intent: express_loneliness
+  examples: |
+    - I feel lonely 😞
+    - There's no one to talk to
+    - I'm alone all the time
+    - I just wish I had someone to be with
+    - Feeling very isolated
+    
+- intent: greet
+  examples: |
+    - Hi
+    - Hello
+    - Hey there
+    - Good morning
+    - Hi there!
+    
+- intent: goodbye
+  examples: |
+    - Bye
+    - See you later
+    - Goodbye
+    - Take care
+    - Bye-bye
+    - Catch you later
+    - Talk to you soon
+    - I'm leaving now
+    - See you next time
+    - Alright, see you!
+    - I'm heading out
+
+- intent: fallback
+  examples: |
+    - asdkjfhaskdj
+    - wjknfwken
+    - qwertyuiop
+    - random text
+    - gibberish

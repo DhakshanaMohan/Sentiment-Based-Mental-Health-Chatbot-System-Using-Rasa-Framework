@@ -1,0 +1,3 @@
+1.1.4
+
+['C:\\Users\\semaphore\\AppData\\Local\\Temp\\cibw-run-1l4mxi11\\cp38-win_amd64\\build\\venv\\lib\\site-packages\\delvewheel\\__main__.py', 'repair', '--add-path', 'C:\\semaphore-agent\\confluent-kafka-python\\dest\\runtimes\\win-x64\\native', '-w', 'C:\\Users\\semaphore\\AppData\\Local\\Temp\\cibw-run-1l4mxi11\\cp38-win_amd64\\repaired_wheel', 'C:\\Users\\semaphore\\AppData\\Local\\Temp\\cibw-run-1l4mxi11\\cp38-win_amd64\\built_wheel\\confluent_kafka-2.8.2-cp38-cp38-win_amd64.whl']
